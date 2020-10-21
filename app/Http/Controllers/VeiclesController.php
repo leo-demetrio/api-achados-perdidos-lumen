@@ -4,11 +4,13 @@
 namespace App\Http\Controllers;
 
 
-class VeiclesController extends Controller
+use App\Veicles;
+
+class VeiclesController extends BaseController
 {
-    public function index()
+    public function __construct()
     {
-        echo 'veicles';
+        $this->class = Veicles::class;
 
     }
 

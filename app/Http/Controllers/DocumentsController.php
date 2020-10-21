@@ -4,12 +4,11 @@
 namespace App\Http\Controllers;
 use App\Documents;
 
-class DocumentsController extends Controller
+class DocumentsController extends BaseController
 {
-    public function index()
+    public function __construct()
     {
-        echo "documents";
-        var_dump(Documents::all());
+        $this->class = Documents::class;
 
     }
 

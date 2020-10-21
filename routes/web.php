@@ -34,8 +34,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('', 'RecordCompleteController@index');
         $router->post('', 'RecordCompleteController@store');
         $router->get('{id}', 'RecordCompleteController@show');
-        $router->put('{id}', 'RecordCompleteController@');
-        $router->delete('{id}', 'RecordCompleteController@');
+        $router->put('{id}', 'RecordCompleteController@update');
+        $router->delete('{id}', 'RecordCompleteController@destroy');
 
     });
 
@@ -44,8 +44,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('', 'DocumentsController@index');
         $router->post('', 'DocumentsController@store');
         $router->get('/{id}', 'DocumentsController@show');
-        $router->put('{id}', 'DocumentsController@');
-        $router->delete('{id}', 'DocumentsController@');
+        $router->put('{id}', 'DocumentsController@update');
+        $router->delete('{id}', 'DocumentsController@destroy');
 
     });
 
@@ -54,8 +54,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('', 'VeiclesController@index');
         $router->post('', 'VeiclesController@store');
         $router->get('{id}', 'VeiclesController@show');
-        $router->put('{id}', 'VeiclesController@');
-        $router->delete('{id}', 'VeiclesController@');
+        $router->put('{id}', 'VeiclesController@update');
+        $router->delete('{id}', 'VeiclesController@destroy');
 
     });
 
@@ -64,8 +64,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('','SuspectsController@index');
         $router->post('','SuspectsController@store');
         $router->get('{id}', 'SuspectsController@show');
-        $router->put('{id}', 'SuspectsController@');
-        $router->delete('{id}', 'SuspectsController@');
+        $router->put('{id}', 'SuspectsController@update');
+        $router->delete('{id}', 'SuspectsController@destroy');
     });
 
 });

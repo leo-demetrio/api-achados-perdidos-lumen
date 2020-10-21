@@ -13,7 +13,7 @@ class Suspects extends Model
     protected $table = 'suspects';
     protected $primaryKey = 'id_sus';
     protected $fillable = [
-        'model','board','ip'
+        'record_id','model','board','ip'
     ];
 
 }

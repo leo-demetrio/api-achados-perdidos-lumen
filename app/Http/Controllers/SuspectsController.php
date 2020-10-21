@@ -6,12 +6,11 @@ namespace App\Http\Controllers;
 
 use App\Suspects;
 
-class SuspectsController extends Controller
+class SuspectsController extends BaseController
 {
-    public function index()
+    public function __construct()
     {
-        echo "suspects";
-        var_dump(Suspects::all());
+        $this->class = Suspects::class;
 
     }
 }

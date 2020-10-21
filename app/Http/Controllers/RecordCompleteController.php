@@ -6,35 +6,14 @@ namespace App\Http\Controllers;
 
 
 use App\RecordComplete;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use PHPUnit\Util\Json;
 
 
-class RecordCompleteController extends Controller
+class RecordCompleteController extends BaseController
 {
-    public function index()
+    public function __construct()
     {
-        echo 'registro completo';
-        return
-        return new JsonResponse(RecordComplete::all(),200);
+        $this->class = RecordComplete::class;
 
-    }
-    public function show(int $id)
-    {
-        echo 'registro completo';
-        $rc = RecordComplete::find($id);
-        return new JsonResponse($rc,201);
-
-    }
-    public function store(Request $r): JsonResponse
-    {
-        $re = RecordComplete::create([
-            'name' => $r->name,
-            'tel' => $r->tel,
-            'tel' => $r->tel_rec
-        ]);
-        return new JsonResponse($re,201);
     }
 
 }

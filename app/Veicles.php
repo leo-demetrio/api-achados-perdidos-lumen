@@ -11,7 +11,7 @@ class Veicles extends Model
     protected $table = 'veicles';
     protected $primaryKey = 'id_vei';
     protected $fillable = [
-        'board','model','color','date_occurrence','name_owner','situation'
+        'record_id','board','model','color','date_occurrence','name_owner','situation'
     ];
 
     public function record()
