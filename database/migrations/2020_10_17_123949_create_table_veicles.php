@@ -20,7 +20,7 @@ class CreateTableVeicles extends Migration
             $table->string('model')->nullable();
             $table->string('color')->nullable();
             $table->date('date_occurrence')->nullable();
-            $table->string('name_owner');
+            $table->string('name_owner')->nullable();
             $table->string('situation');
             $table->timestamps();
 
