@@ -29,11 +29,11 @@ abstract class BaseController extends  Controller
 
     }
 
-    public function store(Request $r): JsonResponse
+    public function store(Request $r)
     {
-        $this->class::create($r->all());
-
-        return new JsonResponse($this->class::all(), 201);
+        //return "ok";exit;
+        return response()->json($this->class::create($r->all()));exit;
+        return  response()->json($this->class::all(), 201);
     }
 
     public function update(int $id, Request $r): JsonResponse

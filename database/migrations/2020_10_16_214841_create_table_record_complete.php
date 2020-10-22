@@ -15,7 +15,7 @@ class CreateTableRecordComplete extends Migration
     {
         Schema::create('record_complete', function (Blueprint $table) {
             $table->bigIncrements('id_rc');//ou id puro
-            $table->integer('record_id');
+            $table->unsignedBigInteger('record_id');
             $table->string('name');
             $table->string('tel')->nullable();
             $table->string('tel_rec')->nullable();

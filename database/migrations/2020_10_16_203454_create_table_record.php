@@ -14,7 +14,7 @@ class CreateTableRecord extends Migration
     public function up()
     {
         Schema::create('records', function (Blueprint $table) {
-            $table->integer('id_record')->autoIncrement();
+            $table->bigIncrements('id_record');
             $table->string('email')->unique();
             $table->string('password')->unique();
             $table->integer('ip');

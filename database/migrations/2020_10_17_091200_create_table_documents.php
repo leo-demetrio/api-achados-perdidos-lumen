@@ -15,11 +15,11 @@ class CreateTableDocuments extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id('id_doc');//primaryKey
-            $table->integer('record_id');
+            $table->unsignedBigInteger('record_id');
             $table->string('number_doc')->unique();
-            $table->string('type_doc');
+            $table->string('type_doc')->nullable();
             $table->date('date_loss')->nullable();
-            $table->string('name_doc');
+            $table->string('name_doc')->nullable();
             $table->string('situation');
             $table->timestamps();
 

@@ -15,7 +15,7 @@ class CreateTableVeicles extends Migration
     {
         Schema::create('veicles', function (Blueprint $table) {
             $table->id('id_vei');
-            $table->integer('record_id');
+            $table->unsignedBigInteger('record_id');
             $table->string('board')->unique();
             $table->string('model')->nullable();
             $table->string('color')->nullable();
