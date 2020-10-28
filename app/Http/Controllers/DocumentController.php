@@ -3,19 +3,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Documents;
+use App\Document;
 use Illuminate\Http\Request;
 
-class DocumentsController extends BaseController
+class DocumentController extends BaseController
 {
     public function __construct()
     {
-        $this->class = Documents::class;
+        $this->class = Document::class;
 
     }
     public function storeDoc(int $id_record)
     {
-        $docs = Documents::query()->where('record_id',$id_record)->get();
+        $docs = Document::query()->where('record_id',$id_record)->get();
         return $docs;
 
     }
@@ -33,6 +33,18 @@ class DocumentsController extends BaseController
 
         ]);
         return  response()->json($this->class::all(), 201);
+    }
+    public function indexDoc(int $recordId)
+    {
+        //echo $id_record; exit;
+
+        $document = Document::query()->where('record_id', $recordId)->get();
+        //return $document;exit;
+        //var_dump($document);exit;
+        if(empty($document)){
+            return response()->json('Não encotramos o recurso',404);
+        }
+        return response()->json($document, 200);
     }
 
 }

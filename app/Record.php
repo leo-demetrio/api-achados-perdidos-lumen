@@ -20,7 +20,7 @@ class Record extends Model
     }
     public function veicles()
     {
-        return $this->hasMany(Veicles::class);
+        return $this->hasMany(Veicle::class);
     }
 
 

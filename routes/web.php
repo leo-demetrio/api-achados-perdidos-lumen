@@ -26,7 +26,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->put('{id}', 'RecordController@update');
         $router->delete('{id}', 'RecordController@destroy');
 
-        $router->post('{id_record}/documentos', 'DocumentsController@storeDoc');
+
+        $router->get('{recordId}/documentos', 'DocumentController@indexDoc');
+        $router->get('{recordId}/veiculos', 'VeicleController@indexVeicles');
 
 
     });
@@ -53,11 +55,11 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->group(['prefix' => 'veiculos'], function () use ($router) {
 
-        $router->get('', 'VeiclesController@index');
-        $router->post('', 'VeiclesController@store');
-        $router->get('{id}', 'VeiclesController@show');
-        $router->put('{id}', 'VeiclesController@update');
-        $router->delete('{id}', 'VeiclesController@destroy');
+        $router->get('', 'VeicleController@index');
+        $router->post('', 'VeicleController@store');
+        $router->get('{id}', 'VeicleController@show');
+        $router->put('{id}', 'VeicleController@update');
+        $router->delete('{id}', 'VeicleController@destroy');
 
     });
 
