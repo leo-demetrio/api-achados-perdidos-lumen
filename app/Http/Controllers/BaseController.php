@@ -32,7 +32,6 @@ abstract class BaseController extends  Controller
 
     public function store(Request $r)
     {
-        //return "ok";exit;
         return response()->json($this->class::create($r->all()));
         //return  response()->json($this->class::all(), 201);
     }

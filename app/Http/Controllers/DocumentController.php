@@ -36,13 +36,10 @@ class DocumentController extends BaseController
     }
     public function indexDoc(int $recordId)
     {
-        //echo $id_record; exit;
-
         $document = Document::query()->where('record_id', $recordId)->get();
-        //return $document;exit;
-        //var_dump($document);exit;
+
         if(empty($document)){
-            return response()->json('Não encotramos o recurso',404);
+            return response()->json('Não encotramos os recursos',404);
         }
         return response()->json($document, 200);
     }

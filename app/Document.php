@@ -21,7 +21,10 @@ class Document extends Model
     }
     public function getLinksAttribute(): array
     {
-        return [ 'documents' => '/api/registro/' . $this->record_id . '/documentos'];
+        return [
+            'self' => '/api/documentos/' . $this->id_doc,
+            'documents' => '/api/registro/' . $this->record_id . '/documentos'
+        ];
     }
 
 }

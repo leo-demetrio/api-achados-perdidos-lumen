@@ -16,12 +16,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->post('/api/login','GenerateTokenController@generateToken');
+$router->post('api/registre_se','RecordController@generateRegister');
+
+$router->group(['prefix' => 'api','middleware' => 'auth'], function () use ($router) {
 
     $router->group(['prefix' => 'registro'], function () use ($router) {
 
         $router->get('', 'RecordController@index');
-        $router->post('', 'RecordController@store');
+        //$router->post('', 'RecordController@store');
         $router->get('{id}', 'RecordController@show');
         $router->put('{id}', 'RecordController@update');
         $router->delete('{id}', 'RecordController@destroy');

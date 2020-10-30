@@ -20,8 +20,11 @@ class Veicle extends Model
         return $this->belongsTo(Record::class);
 
     }
-    public function getLinksAttribute(){
-        return '/api/registro/'. $this->record_id . '/veiculos';
+    public function getLinksAttribute($links): array
+    {
+        return [
+            'self' => '/api/veiculos/' . $this->id_vei,
+            'veicles' => '/api/registro/'. $this->record_id . '/veiculos'];
     }
 
 }

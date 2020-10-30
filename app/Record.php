@@ -9,6 +9,7 @@ class Record extends Model
     protected $table = 'records';
     protected $primaryKey = 'id_record';
     protected $fillable = ['email','password','ip'];
+    protected $appends = ['links'];
 
     public function recordComplete()
     {
@@ -21,6 +22,13 @@ class Record extends Model
     public function veicles()
     {
         return $this->hasMany(Veicle::class);
+    }
+    public function getLinksAttribute($links)
+    {
+        return [
+            'documents' => '/api/registro/' . $this->id_record . '/documentos',
+            'veiculos' => '/api/registro/' . $this->id_record . '/veiculos'
+        ];
     }
 
 
